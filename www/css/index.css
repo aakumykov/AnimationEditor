@@ -1,0 +1,76 @@
+* { margin: 0px; padding: 0px; }
+
+#editor {
+    position: relative;
+    width: 90%;
+    margin: 10px;
+    height: 317px;
+    background-color: ghostwhite;
+    border: 1px dotted grey;
+}
+
+#toolbar {
+    position: absolute;
+    width: 60px;
+    height: 280px;
+    left: 10px;
+    top: 10px;
+    border: 1px solid #A68125;
+    border-radius: 2px;
+    background-color: #F0DCAA;
+}
+
+/*#workspace {
+    position: relative;
+    width: 90%;
+    height: 280px;
+    margin: 10px;
+    margin-left: 90px;
+    border: 1px solid #D6D6D6;
+    background-color: #EBEBEB;
+}*/
+
+#statusbar {
+    position: absolute;
+    width: 98%;
+    height: 10px;
+    bottom: 0px;
+    padding: 4px 0px;
+    background-color: #f0f0f0;
+    color: grey;
+    font: 10px sans-serif;
+}
+.status_part {
+    width: auto;
+    float: left;
+    padding: 0px 10px;
+    border-right: 1px solid grey;
+}
+
+.tool {
+    display: block;
+    position: relative;
+    float: left;
+    width: 24px;
+    height: 24px;
+    background-color: lightblue;
+    margin: 1px;
+    border: 2px outset skyblue;
+    color: #050505;
+    cursor: default;
+}
+.tool:hover {
+    background-color: lightgreen;
+    border-color: royalblue;
+    /*border-style: inset;*/
+}
+.tool:active {
+    background-color: lightgreen;
+    border-color: royalblue;    
+    border-style: inset;
+}
+.activeTool {
+    background-color: lightgreen;
+    border-style: inset;
+}
+

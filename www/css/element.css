@@ -1,0 +1,30 @@
+.element {
+	position: absolute;
+	border-width: 1px;
+	border-style: solid;
+}
+
+.activeElement {
+	border-width: 4px;
+}
+
+.rect {
+	width: 160px;
+	height: 90px;
+	border-color: crimson;
+	background-color: pink;
+}
+
+.circle {
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+	border-color: deepskyblue;
+	background-color: skyblue;
+}
+
+.svgBox {
+	position: absolute;
+	border: 1px dashed LimeGreen;
+	z-index: 1;
+}
