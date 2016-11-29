@@ -17,6 +17,6 @@ editor.init = function(anchor, toolbar, workspace, statusbar){
 	workspace.init();
 }
 
-editor.on('touchend', function(ev){
+editor.on('mouseup', function(ev){
 	if ( workspace.isMouseActive() ) workspace.setMouseInactive();
 });

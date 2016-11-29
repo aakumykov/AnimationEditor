@@ -18,18 +18,18 @@ var workspace = {
 			stroke({color:'#D6D6D6',width:1}).
 			fill({color:'#EBEBEB'});
 
-		this.drawCanvas.on('touchstart', this.touchstart);
-		this.drawCanvas.on('touchend',   this.touchend);
-		this.drawCanvas.on('touchmove', this.touchmove);
+		this.drawCanvas.on('mousedown', this.mousedown);
+		this.drawCanvas.on('mouseup',   this.mouseup);
+		this.drawCanvas.on('mousemove', this.mousemove);
 		this.drawCanvas.on('mouseout',  this.mouseout);
 	},
 
-	touchstart: function(ev) {
+	mousedown: function(ev) {
 		var target = ev.target;
 		var context = ('workspace'==target.id) ? 'workspace' : 'element';
 
 		statusbar.setStatus('context', context);
-		//console.log('workspace.touchstart(), id: '+target.id);
+		//console.log('workspace.mousedown(), id: '+target.id);
 
 		if ('element'==context) workspace.setActiveElement(target);
 		if ('workspace'==context) workspace.blurActiveElement();
@@ -41,11 +41,11 @@ var workspace = {
 
 		workspace.applyTool();
 	},
-	touchend: function(ev){
+	mouseup: function(ev){
 		var context = ('workspace'==ev.target.id) ? 'workspace' : 'element';
 		
 		statusbar.setStatus('context', context);
-		//console.log('workspace.touchend(), id: '+ev.target.id);
+		//console.log('workspace.mouseup(), id: '+ev.target.id);
 
 		digest.setContext(context);
 		digest.setEvent(ev);
@@ -54,14 +54,19 @@ var workspace = {
 		
 		workspace.applyTool();
 	},
-	touchmove: function(ev){
+	mousemove: function(ev){
+		var pageX = ev.pageX;
+		var pageY = ev.pageY;
+		var clientX = ev.clientX;
+		var clientY = ev.clientY;
+
 		if (workspace.isMouseActive()){
-			mouse.addPoint(ev.touches[0].pageX, ev.touches[0].pageY);
+			mouse.addPoint(pageX, pageY);
 		}
 
 		statusbar.setStatus(
 			'other', 
-			'Курсор: page: function('+ev.touches[0].pageX+', '+ev.touches[0].pageY+'), client: function('+ev.touches[0].clientX+', '+ev.touches[0].clientY+'),'
+			'Курсор: page: function('+pageX+', '+pageY+'), client: function('+clientX+', '+clientY+'),'
 		);
 		
 		if (workspace.isMouseActive()) {

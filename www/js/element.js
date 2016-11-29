@@ -19,14 +19,14 @@ var element = {
 			}
 		}
 
-		element.on('touchstart', function(ev){
-			//console.log('element.touchstart()');
-			workspace.touchstart(ev);
+		element.on('mousedown', function(ev){
+			//console.log('element.mousedown()');
+			workspace.mousedown(ev);
 		});
 		
-		element.on('touchend', function(ev){
-			//console.log('element.touchend()');
-			workspace.touchend(ev);
+		element.on('mouseup', function(ev){
+			//console.log('element.mouseup()');
+			workspace.mouseup(ev);
 		});
 
 		return element;
