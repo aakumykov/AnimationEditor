@@ -56,12 +56,12 @@ var workspace = {
 	},
 	touchmove: function(ev){
 		if (workspace.isMouseActive()){
-			mouse.addPoint(ev.touches[0].pageX, ev.touches[0].pageY);
+			mouse.addPoint(ev.changedTouches[0].pageX, ev.changedTouches[0].pageY);
 		}
 
 		statusbar.setStatus(
 			'other', 
-			'Курсор: page: function('+ev.touches[0].pageX+', '+ev.touches[0].pageY+'), client: function('+ev.touches[0].clientX+', '+ev.touches[0].clientY+'),'
+			'Курсор: page: function('+ev.changedTouches[0].pageX+', '+ev.changedTouches[0].pageY+'), client: function('+ev.changedTouches[0].clientX+', '+ev.changedTouches[0].clientY+'),'
 		);
 		
 		if (workspace.isMouseActive()) {
