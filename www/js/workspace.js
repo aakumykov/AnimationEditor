@@ -39,6 +39,8 @@ var workspace = {
 		mouse.startRecord();
 		workspace.setMouseActive();
 
+		//console.log('touch, '+workspace.isMouseActive());
+
 		workspace.applyTool();
 	},
 	touchend: function(ev){
@@ -55,6 +57,8 @@ var workspace = {
 		workspace.applyTool();
 	},
 	touchmove: function(ev){
+		ev.preventDefault();
+
 		if (workspace.isMouseActive()){
 			mouse.addPoint(ev.changedTouches[0].pageX, ev.changedTouches[0].pageY);
 		}
