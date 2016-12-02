@@ -55,7 +55,7 @@ toolbar.buildTool = function(toolSpec){
 
 	var tool = $("<div></div>");
 		
-		tool.on('touchstart', function(ev){
+		tool.on('mousedown', function(ev){
 			toolbar.setActiveTool(this);
 		});
 
@@ -67,8 +67,8 @@ toolbar.buildTool = function(toolSpec){
 		tool.data('name',toolSpec.name);
 		tool.data('type',toolSpec.type);
 		tool.data('context',toolSpec.context);
-		tool.data('touchstart',toolSpec.touchstart);
-		tool.data('touchend',toolSpec.touchend);
+		tool.data('mousedown',toolSpec.mousedown);
+		tool.data('mouseup',toolSpec.mouseup);
 		tool.data('click',toolSpec.click);
 
 		tool.data('getCallback', function(callbackType){

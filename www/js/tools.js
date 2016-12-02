@@ -12,8 +12,8 @@ var moveTool = {
 	context: 'element',
 	title: 'Перемещение элемента',
 	class: 'fa fa-arrows',
-	touchstart: function() {
-		console.log('moveTool.touchstart()');
+	mousedown: function() {
+		console.log('moveTool.mousedown()');
 
 		var element = digest.element();
 		var event = digest.event();
@@ -24,8 +24,8 @@ var moveTool = {
 		}
 
 	},
-	touchend: function(param){
-		console.log('moveTool.touchend()');
+	mouseup: function(param){
+		console.log('moveTool.mouseup()');
 
 		var element = digest.element();
 		var event = digest.event();
@@ -41,7 +41,7 @@ var lockTool = {
 	context: 'element',
 	title: 'Блокировка элемента',
 	class: 'fa fa-lock',
-	touchstart: function(param){
+	mousedown: function(param){
 		toolbar.setDefaultTool();
 	}
 };
@@ -51,8 +51,8 @@ var rectTool = {
 	context: 'workspace',
 	title: 'Прямоугольник',
 	class: 'fa fa-stop',
-	touchend: function(){
-		//console.log('rectTool.touchend()');
+	mouseup: function(){
+		//console.log('rectTool.mouseup()');
 
 		var rect = element.rect(digest.geometry());
 		
@@ -68,8 +68,8 @@ var circleTool = {
 	context: 'workspace',
 	title: 'Круг',
 	class: 'fa fa-circle-o',
-	touchend: function(){
-		console.log('circleTool.touchend()');
+	mouseup: function(){
+		console.log('circleTool.mouseup()');
 		
 		var circle = element.circle(digest.geometry());
 
@@ -82,8 +82,8 @@ var polylineTool = {
 	type: 'creator',
 	context: 'workspace',
 	class: 'fa fa-pencil',
-	touchend: function(){
-		console.log('polylineTool.touchend()');
+	mouseup: function(){
+		console.log('polylineTool.mouseup()');
 		
 		var polyline = element.polyline(digest.geometry(), digest.mousePath());
 
@@ -96,7 +96,7 @@ var layerUp = {
 	context: 'element',
 	title: 'Переместить вверх',
 	class: 'fa fa-level-up',
-	touchstart: function(param){
+	mousedown: function(param){
 		param.element.style.zIndex+=1;
 	}
 };
@@ -106,7 +106,7 @@ var layerDown = {
 	context: 'element',
 	title: 'Переместить вниз',
 	class: 'fa fa-level-down',
-	touchstart: function(param){
+	mousedown: function(param){
 		param.element.style.zIndex-=1;
 	}
 };
@@ -129,11 +129,11 @@ var resizeTool = {
 		}
 
 	},
-	// touchend: function(param){
+	// mouseup: function(param){
 	// 	var element = $(param.element);
 	// 	var event = param.event;
 		
-	// 	console.log('resizeTool.touchend('+element.attr('id')+')');
+	// 	console.log('resizeTool.mouseup('+element.attr('id')+')');
 
 	// 	if (element.data('ui-resizable')) {
 	// 		element.resizable('destroy');
@@ -146,8 +146,8 @@ var removeTool = {
 	type: 'modifier',
 	context: 'element',
 	class: 'fa fa-times',
-	touchstart: function(){
-		console.log('removeTool.touchstart()');
+	mousedown: function(){
+		console.log('removeTool.mousedown()');
 		digest.element().instance.remove();
 	}
 }
