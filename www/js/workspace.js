@@ -2,10 +2,10 @@
 
 var workspace = {
 	name: 'workspace',
-	width: '90%',
-	height: 280,
-	left: 90,
-	top: 10,
+	width: '100%',
+	height: '100%',
+	left: 0,
+	top: 0,
 
 	init: function(){
 		// console.log('workspace.init()');
