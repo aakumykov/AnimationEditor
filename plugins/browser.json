@@ -9,7 +9,17 @@
     "installed_plugins": {
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "ru.aakumykov.me.AnimationEditor"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "ru.aakumykov.me.AnimationEditor"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "ru.aakumykov.me.AnimationEditor"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "ru.aakumykov.me.AnimationEditor"
+        }
+    }
 }
