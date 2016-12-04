@@ -5,6 +5,8 @@
     width: 100%;
     height: 332px;
     background-color: ghostwhite;
+    z-index: 1;
+    opacity: 0.5;
 }
 
 #toolbar {

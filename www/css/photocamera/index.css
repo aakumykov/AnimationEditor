@@ -26,9 +26,10 @@
 #photo {
 	/*border: 2px ridge Crimson;*/
 	position: absolute;
-	/*top: 50px;*/
+	top: 0px;
 	left: 0px;
 	right: 0px;
 	margin-left: auto;
 	margin-right: auto;
+    z-index: 0;
 }

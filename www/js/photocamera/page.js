@@ -11,6 +11,10 @@ var page = {
 			$("<button id='photo_button'><i  class='fa fa-camera-retro fa-4x'></i></button>")
 		);
 
+		$(document.body).append(
+			$("<img id='photo' src=''>")
+		);
+
 		this.adjustSize();
 		photo.adjustSize();
 
