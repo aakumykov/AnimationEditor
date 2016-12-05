@@ -2,11 +2,17 @@
 
 #editor {
     position: absolute;
-    width: 100%;
-    height: 332px;
+    width: 512px;
+    height: 512px;
+    top: 5%;
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: ghostwhite;
     z-index: 1;
     opacity: 0.5;
+    border: 1px solid grey;
 }
 
 #toolbar {
