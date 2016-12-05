@@ -10,4 +10,5 @@ $(document).ready(function(){
     );
 
     page.init('#toolbar', '#editor');
+    sender.init('#toolbar');
 });
