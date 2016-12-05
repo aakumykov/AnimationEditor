@@ -10,10 +10,10 @@
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "ru.aakumykov.me.AnimationEditor"
         },
-        "cordova-plugin-camera": {
+        "cordova-plugin-device": {
             "PACKAGE_NAME": "ru.aakumykov.me.AnimationEditor"
         },
-        "cordova-plugin-device": {
+        "cordova-plugin-camera": {
             "PACKAGE_NAME": "ru.aakumykov.me.AnimationEditor"
         }
     },

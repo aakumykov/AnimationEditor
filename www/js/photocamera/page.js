@@ -12,7 +12,7 @@ var page = {
 		);
 
 		$(document.body).append(
-			$("<img id='photo' src=''>")
+			$("<img id='photo' src='img/pixel.png'>")
 		);
 
 		this.adjustSize();
