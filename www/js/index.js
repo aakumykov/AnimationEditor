@@ -9,5 +9,5 @@ $(document).ready(function(){
         statusbar
     );
 
-    page.init('#toolbar');
+    page.init('#toolbar', '#editor');
 });

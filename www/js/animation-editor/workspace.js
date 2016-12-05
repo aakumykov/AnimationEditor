@@ -16,7 +16,8 @@ var workspace = {
 			id(this.name).
 			move(this.left, this.top).
 			stroke({color:'#D6D6D6',width:1}).
-			fill({color:'#EBEBEB'});
+			fill({color:'#EBEBEB'}).
+			opacity(0.5);
 
 		this.drawCanvas.on('mousedown', this.mousedown);
 		this.drawCanvas.on('mouseup',   this.mouseup);

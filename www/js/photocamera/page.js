@@ -4,14 +4,14 @@ var page = {
 	width: 0,
 	height: 0,
 	
-	init: function(buttonParentId) {
+	init: function(buttonParentId, photoParentId) {
 		var self = this;
 
 		$(buttonParentId).append(
 			$("<button id='photo_button'><i  class='fa fa-camera-retro fa-4x'></i></button>")
 		);
 
-		$(document.body).append(
+		$(photoParentId).append(
 			$("<img id='photo' src='img/pixel.png'>")
 		);
 
