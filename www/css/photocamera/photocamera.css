@@ -1,0 +1,35 @@
+* { margin:0px; padding: 0px; }
+
+#place {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: Salmon;
+    opacity: 0.2;
+}
+
+#photo_button {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    border: 1px outset LightGrey;
+    /*width: 10%;
+    height: 10%;*/
+    /*min-width: 80px;
+    min-height: 40px;*/
+    /*left: 10px;
+    top: 10px;*/
+    opacity: 1;
+}
+
+#photo {
+	/*border: 2px ridge Crimson;*/
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	margin-left: auto;
+	margin-right: auto;
+    z-index: 0;
+}

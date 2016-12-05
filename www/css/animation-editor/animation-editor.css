@@ -1,0 +1,72 @@
+* { margin: 0px; padding: 0px; }
+
+#editor {
+    position: absolute;
+    width: 512px;
+    height: 512px;
+    top: 5%;
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: ghostwhite;
+    z-index: 1;
+    opacity: 0.5;
+    border: 1px solid grey;
+}
+
+#toolbar {
+    position: absolute;
+    width: 60px;
+    height: 280px;
+    left: 10px;
+    top: 10px;
+    border: 2px ridge #A68125;
+    border-radius: 2px;
+    background-color: #F0DCAA;
+}
+
+#statusbar {
+    position: absolute;
+    width: 98%;
+    height: 10px;
+    bottom: 0px;
+    padding: 4px 0px;
+    /*background-color: #f0f0f0;*/
+    background-color: khaki;
+    color: grey;
+    font: 10px sans-serif;
+    border-top: 1px solid dimgrey;
+}
+.status_part {
+    width: auto;
+    float: left;
+    padding: 0px 10px;
+    border-right: 1px solid grey;
+}
+
+.tool {
+    display: block;
+    position: relative;
+    float: left;
+    width: 24px;
+    height: 24px;
+    background-color: lightblue;
+    margin: 1px;
+    border: 2px outset skyblue;
+    color: #050505;
+    cursor: default;
+}
+.tool:hover {
+    background-color: lightgreen;
+    border-color: royalblue;
+}
+.tool:active {
+    background-color: lightgreen;
+    border-color: royalblue;    
+    border-style: inset;
+}
+.activeTool {
+    background-color: lightgreen;
+    border-style: inset;
+}
