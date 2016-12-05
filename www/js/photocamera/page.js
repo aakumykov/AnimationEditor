@@ -38,7 +38,7 @@ var page = {
 	placeAPhoto: function(){
 		console.log('page.placeAPhoto()');
 
-		var newSize = photo.fitTo(this.width, this.height);
+		var newSize = photo.fitTo(512, 512);
 
 		var photoOnPage = $('#photo');
 			photoOnPage.width( newSize.width );
