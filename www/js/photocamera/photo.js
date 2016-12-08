@@ -13,7 +13,7 @@ var photo = {
 		this.height(480);
 		// this.width( Math.round(photocamera.width/2) );
 		// this.height( Math.round(photocamera.height/2) );
-		// console.log('photo.adjustSize(), '+this.width()+'x'+this.height());
+		console.log('photo.adjustSize(), '+this.width()+'x'+this.height());
 	},
 
 	takeNew: function(){

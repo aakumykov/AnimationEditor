@@ -11,10 +11,15 @@ var photocamera = {
 			$("<button id='photo_button'><i  class='fa fa-camera-retro fa-4x'></i></button>")
 		);
 
+		//console.log($(photoParentId).width()+"x"+$(photoParentId).height());
+
 		$(photoParentId).append(
 			$("<img id='photo' src='img/pixel.png'>")
 		);
+		this.width = $(photoParentId).width();
+		this.height = $(photoParentId).height();
 
+		// зачем это?
 		this.adjustSize();
 		photo.adjustSize();
 
@@ -38,7 +43,7 @@ var photocamera = {
 	placeAPhoto: function(){
 		console.log('photocamera.placeAPhoto()');
 
-		var newSize = photo.fitTo(500, 500);
+		var newSize = photo.fitTo(this.width, this.height);
 
 		var photoOnPage = $('#photo');
 			photoOnPage.width( newSize.width );
