@@ -14,6 +14,13 @@ toolbar.init = function(){
 		this.appendTool(spec);
 	}
 
+	// var photoButton = $("<button id='photo_button'><i  class='fa fa-camera-retro fa-4x'></i></button>");
+	// 	photoButton.click(function(){
+	// 		photocamera.placeAPhoto('#photo');
+	// 	});
+	// param.buttonParent.append(button);
+	// this.append(photoButton);
+	
 	this.setDefaultTool();
 
 	editor.append(this);
