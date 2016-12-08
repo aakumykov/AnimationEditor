@@ -8,40 +8,41 @@ var photocamera2 = {
 	init: function(param){
 		// this.width = param.width || this.width;
 		// this.height = param.height || this.height;
+		var self = this;
 
-		this.placeButton(param.buttonParent);
-		this.placeImage(param.photoParent);
+		var button = $("<button id='photo_button'><i  class='fa fa-camera-retro fa-4x'></i></button>");
+		button.click(function(){
+			self.takeAPhoto();
+		});
+		param.buttonParent.append(button)
+		
+		var image = $("<img id='photo' src='img/pixel.png'>");
+		param.photoParent.append(image);
 	},
 
+	// фотает и возвращает фото-данные
 	takeAPhoto: function(param={}) {
 		console.log("photocamera2.takeAPhoto()");
 		
 		this.width = param.width || this.width;
 		this.height = param.height || this.height;
 
-		this.placePhoto();
+		var res = this.requestPhoto();
+		console.log("photocamera2.takeAPhoto(), res:");
+		console.log(res);
 	},
 
-
-	placeButton: function(parentElement){
-		console.log("photocamera2.placeButton()");
-		console.log(parentElement);
-		var button = $("<button id='photo_button'><i  class='fa fa-camera-retro fa-4x'></i></button>");
-		$(parentElement).append(button);
-	},
-
-	placeImage: function(parentElement) {
-		console.log("photocamera2.placeImage()");
-		console.log(parentElement);
-		var image = $("<img id='photo' src='img/pixel.png'>");
-		$(parentElement).append(image);
-	},
-
-	placePhoto: function(){
+	// фотает и помещает фото в указанный элемент
+	placeAPhoto: function(parentElement){
 		console.log("photocamera2.placeAPhoto()");
-		var size = this.fitTo
+		var photo = this.takeAPhoto();
+		$(parentElement)
 	},
 
+	// возвращает <img> с фотографией (не реализовано)
+	takeImage: function(attributes){
+
+	},
 
 
 	requestPhoto: function(){
@@ -67,10 +68,15 @@ var photocamera2 = {
 		);
 	},
 
+
+	photoData: function(data) {
+		this.photo = data;
+	},
+
 	photoSuccess: function(imageURI){
-		console.log('photocamera2.photoSuccess()');
+		console.log('photocamera2.photoSuccess(), length: '+imageURI.length);
 		var dataPrefix = ('browser'==device.platform) ? 'data:image/jpeg;base64,' : '';
-		this.photo = dataPrefix + imageURI;
+		photocamera2.photoData(dataPrefix + imageURI);
 	},
 
 	photoError: function(msg){
@@ -104,5 +110,5 @@ var photocamera2 = {
 		}
 	},
 
-	
+
 }
