@@ -12,5 +12,10 @@ $(document).ready(function(){
         statusbar: statusbar,
     });
 
-    photocamera.init('#toolbar', '#editor');
+    photocamera2.init({
+    	width: 640,
+    	height: 480,
+    	buttonParent: $('#toolbar'),
+    	photoParent: $('#editor'),
+    });
 });
