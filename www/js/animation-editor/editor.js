@@ -8,6 +8,7 @@ editor.init = function(param){
 	// editor
 	this.width(param.width);
 	this.height(param.height);
+	
 	this.append( $("<img id='photo' src='img/pixel.png'>") );
 	this.on('mouseup', function(ev){
 		if ( workspace.isMouseActive() ) workspace.setMouseInactive();

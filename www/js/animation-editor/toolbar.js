@@ -14,12 +14,18 @@ toolbar.init = function(){
 		this.appendTool(spec);
 	}
 
-	// var photoButton = $("<button id='photo_button'><i  class='fa fa-camera-retro fa-4x'></i></button>");
-	// 	photoButton.click(function(){
-	// 		photocamera.placeAPhoto('#photo');
-	// 	});
-	// param.buttonParent.append(button);
-	// this.append(photoButton);
+	var photoButton = $("<button id='photo_button'><i  class='fa fa-camera-retro fa-4x'></i></button>");
+	var photoButtonCallback = function(){
+		console.log('photoButton callback');
+		$('#photo').attr('src', photocamera.photo);
+	}
+	photoButton.click(function(){
+		photocamera.takeAPhoto({
+			callback: photoButtonCallback
+		});
+	});
+	
+	this.append(photoButton);
 	
 	this.setDefaultTool();
 
