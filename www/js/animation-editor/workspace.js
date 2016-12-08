@@ -7,7 +7,7 @@ var workspace = {
 	left: 0,
 	top: 0,
 
-	init: function(){
+	init: function(arg){
 		// console.log('workspace.init()');
 		// console.log('this.name='+this.name);
 

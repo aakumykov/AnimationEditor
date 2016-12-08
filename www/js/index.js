@@ -3,11 +3,14 @@
 $(document).ready(function(){
     console.log('document ready');
 
-    editor.init(document.body, 
-        toolbar, 
-        workspace, 
-        statusbar
-    );
+    editor.init({
+    	width: 500,
+    	height: 500,
+    	parentElement: document.body, 
+        toolbar: toolbar, 
+        workspace: workspace, 
+        statusbar: statusbar,
+    });
 
     page.init('#toolbar', '#editor');
 });

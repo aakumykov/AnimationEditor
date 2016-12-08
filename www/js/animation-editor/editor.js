@@ -2,21 +2,30 @@
 
 var editor = $("<div id='editor' name='editor' title='редактор'></div>");
 
-editor.init = function(anchor, toolbar, workspace, statusbar){
+editor.init = function(param){
 	//console.log('editor.init()');
 	
-	$(anchor).append(this); //строка должна быть до инициализации инструментов, так они цепляются к editor
+	// editor
+	this.width(param.width);
+	this.height(param.height);
+	this.on('mouseup', function(ev){
+		if ( workspace.isMouseActive() ) workspace.setMouseInactive();
+	});
+	$(param.parentElement).append(this); //строка должна быть до инициализации инструментов, так они цепляются к editor
 
-	this.toolbar = toolbar;
-	toolbar.init();
+	// toolbar
+	this.toolbar = param.toolbar;
+	this.toolbar.init();
 
-	this.statusbar = statusbar;
-	statusbar.init();
+	// statusbar
+	this.statusbar = param.statusbar;
+	this.statusbar.init();
 
-	this.workspace = workspace;
-	workspace.init();
+	// workspace
+	this.workspace = param.workspace;
+	this.workspace.init();
 }
 
-editor.on('mouseup', function(ev){
-	if ( workspace.isMouseActive() ) workspace.setMouseInactive();
-});
+// editor.on('mouseup', function(ev){
+// 	if ( workspace.isMouseActive() ) workspace.setMouseInactive();
+// });

@@ -2,16 +2,8 @@
 
 #editor {
     position: absolute;
-    width: 512px;
-    height: 512px;
-    /*top: 5%;
-    left: 0px;
-    right: 0px;
-    margin-left: auto;
-    margin-right: auto;*/
     background-color: ghostwhite;
     z-index: 1;
-    /*opacity: 0.5;*/
     border: 1px solid grey;
 }
 
@@ -28,7 +20,7 @@
 
 #statusbar {
     position: absolute;
-    width: 98%;
+    width: 100%;
     height: 10px;
     bottom: 0px;
     padding: 4px 0px;
