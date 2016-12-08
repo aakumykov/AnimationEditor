@@ -14,6 +14,26 @@ toolbar.init = function(){
 		this.appendTool(spec);
 	}
 
+	var photoButton = $("<button id='photo_button'><i  class='fa fa-camera-retro fa-4x'></i></button>");
+	var photoButtonCallback = function(){
+		console.log('photoButton callback');
+
+		var photoImage = $('#photo');
+		var imageParent = photoImage.parent();
+		var newSize = photocamera.fitTo(imageParent.width(), imageParent.height());
+			
+		photoImage.width(newSize.width);
+		photoImage.height(newSize.height);
+		photoImage.attr('src', photocamera.photo);
+	}
+	photoButton.click(function(){
+		photocamera.takeAPhoto({
+			callback: photoButtonCallback
+		});
+	});
+	
+	this.append(photoButton);
+	
 	this.setDefaultTool();
 
 	editor.append(this);
