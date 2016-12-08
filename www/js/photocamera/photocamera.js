@@ -1,6 +1,6 @@
 'use strict';
 
-var page = {
+var photocamera = {
 	width: 0,
 	height: 0,
 	
@@ -31,14 +31,14 @@ var page = {
 
 
 	requestAPhoto: function(){
-		console.log('page.requestAPhoto(), '+photo.width()+'x'+photo.height());
+		console.log('photocamera.requestAPhoto(), '+photo.width()+'x'+photo.height());
 		photo.takeNew();
 	},
 	
 	placeAPhoto: function(){
-		console.log('page.placeAPhoto()');
+		console.log('photocamera.placeAPhoto()');
 
-		var newSize = photo.fitTo(512, 512);
+		var newSize = photo.fitTo(500, 500);
 
 		var photoOnPage = $('#photo');
 			photoOnPage.width( newSize.width );
@@ -49,7 +49,7 @@ var page = {
 	adjustSize: function(){
 		this.width = window.innerWidth;
 		this.height = window.innerHeight;
-		//console.log('page.adjustSize(), '+this.width+'x'+this.height);
+		console.log('photocamera.adjustSize(), '+this.width+'x'+this.height);
 	},
 
 }

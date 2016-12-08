@@ -11,8 +11,8 @@ var photo = {
 	adjustSize: function(){
 		this.width(640);
 		this.height(480);
-		// this.width( Math.round(page.width/2) );
-		// this.height( Math.round(page.height/2) );
+		// this.width( Math.round(photocamera.width/2) );
+		// this.height( Math.round(photocamera.height/2) );
 		// console.log('photo.adjustSize(), '+this.width()+'x'+this.height());
 	},
 
@@ -43,7 +43,7 @@ var photo = {
 		console.log('photo.onSuccess()');
 		//console.log(imageURI.length);
 		photo.data(imageURI);
-		page.placeAPhoto();
+		photocamera.placeAPhoto();
 	},
 
 	onError: function(msg){

@@ -12,5 +12,5 @@ $(document).ready(function(){
         statusbar: statusbar,
     });
 
-    page.init('#toolbar', '#editor');
+    photocamera.init('#toolbar', '#editor');
 });
