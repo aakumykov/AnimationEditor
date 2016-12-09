@@ -152,6 +152,19 @@ var removeTool = {
 	}
 }
 
+var hexTool = {
+	title: '16-ричный код',
+	type: 'creator',
+	context: 'workspace',
+	class: 'fa fa-code',
+	mousedown: function(){
+		console.log('hexTool.mousedown()');
+		
+		//console.log( workspace.svg.select('rect.rect') );
+		console.log( SVG.select('rect.rect').first().width() );
+	}
+}
+
 
 // сборка в коллекцию
 var toolSpecs = {
@@ -165,4 +178,5 @@ var toolSpecs = {
 	lock: lockTool,
 	resize: resizeTool,
 	remove: removeTool,
+	hex: hexTool,
 };
