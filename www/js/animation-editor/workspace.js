@@ -85,7 +85,9 @@ var workspace = {
 		var elementType = element.type();
 		var num = document.getElementsByTagName(elementType).length;
 		var id = elementType + num;
+		
 		element.id(id);
+		element.addClass(elementType);
 		
 		this.svg.put(element);
 	},
