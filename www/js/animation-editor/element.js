@@ -28,6 +28,30 @@ var element = {
 			//console.log('element.mouseup()');
 			workspace.mouseup(ev);
 		});
+	
+		element.hexArray = function(){
+			console.log('element.hexArray()');
+			//console.log(this);
+			console.log(this.type());
+			
+			function dec2hex(n, laserOn=false) {
+				var modifier = (laserOn) ? 32768 : 0;
+				return  "0x" + (n+modifier).toString(16);
+			}
+			
+			var points = this.points();
+				
+				console.log(points);
+			
+			var hex_array = [ dec2hex(points[0]), dec2hex(points[1]) ];
+			
+			for (var i=2; i<points.length; i+=2) {
+				hex_array.push( dec2hex(points[i],true) );
+				hex_array.push( dec2hex(points[i+1]) );
+			}
+			
+			return hex_array;
+		}
 
 		return element;
 	},
@@ -42,17 +66,17 @@ var element = {
 
 			rect.type = function() { return 'rect'; }
 
-			rect.pointsArray = function(){
-				console.log('rect.coords()');
+			rect.points = function(){
+				//console.log('rect.points()');
 				var x = this.x();
 				var y = this.y();
 				var w = this.width();
 				var h = this.height();
 				return [
-					{x: (x) ,y: (y)},
-					{x: (x+w) ,y: (y)},
-					{x: (x+w) ,y: (y+h)},
-					{x: (x) ,y: (y+h)},
+					x	 , y,
+					(x+w), y,
+					(x+w), (y+h),
+					(x)  , y,
 				]
 			}
 
@@ -73,13 +97,14 @@ var element = {
 
 			circle.type = function() { return 'circle'; }
 			
-			circle.pointsArray = function(step=30){
-				console.log('circle('+left+','+top+','+radius+')');
+			circle.points = function(step=30){
+				//console.log('circle.points()');
 				var points = [];
 				for (var i=0; i<360; i+=step) {
 					var x = left + radius*Math.cos(i*Math.PI/180);
 					var y = top + radius*Math.sin(i*Math.PI/180);
-					points.push({x:x, y:y});
+					points.push(x);
+					points.push(y);
 				}
 				return points;
 			}
@@ -97,13 +122,14 @@ var element = {
 
 				polyline.type = function() { return 'polyline'; }
 				
-				polyline.pointsArray = function(){
-					console.log('polyline.pointsArray()');
+				polyline.points = function(){
+					//console.log('polyline.points()');
 					var svgPoints = polyline.attr('points').split(' ');
 					var points = [];
 					for (var i=0; i<svgPoints.length; i++) {
 						var coord = svgPoints[i].split(',');
-						points.push({x:coord[0], y:coord[1]});
+						points.push(coord[0]);
+						points.push(coord[1]);
 					}
 					return points;
 				}

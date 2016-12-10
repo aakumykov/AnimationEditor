@@ -5,10 +5,10 @@ var selectToolSpec = {
 	context: 'element',
 	title: 'Выбор элемента',
 	class: 'fa fa-mouse-pointer',
-	mousedown: function(arg){
+	mousedown: function(){
 		console.log('selectTool.mousedown()');
-		console.log(arg);
-		console.log( SVG.select('.element').first().pointsArray() );
+		//console.log( SVG.select('.element').first().pointsArray() );
+		console.log( SVG.select('.element').first().hexArray() );
 	}
 };
 
@@ -164,8 +164,15 @@ var hexTool = {
 	class: 'fa fa-code',
 	mousedown: function(){
 		console.log('hexTool.mousedown()');
-		//console.log( SVG.select('.element').first().pointsArray() );
-	}
+		console.log(this);
+		
+		var self = this;
+		var cmd_array = [];
+		
+		$('.element').each(function(i,element){
+			//console.log( element.instance.pointsArray() );
+		});
+	},
 }
 
 
