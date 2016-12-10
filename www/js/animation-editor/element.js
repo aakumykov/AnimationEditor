@@ -72,6 +72,17 @@ var element = {
 			move(left, top);
 
 			circle.type = function() { return 'circle'; }
+			
+			circle.pointsArray = function(step=30){
+				console.log('circle('+left+','+top+','+radius+')');
+				var points = [];
+				for (var i=0; i<360; i+=step) {
+					var x = left + radius*Math.cos(i*Math.PI/180);
+					var y = top + radius*Math.sin(i*Math.PI/180);
+					points.push({x:x, y:y});
+				}
+				return points;
+			}
 
 		return this.addElementMethods(circle);
 	},
