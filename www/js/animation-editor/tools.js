@@ -5,6 +5,11 @@ var selectToolSpec = {
 	context: 'element',
 	title: 'Выбор элемента',
 	class: 'fa fa-mouse-pointer',
+	mousedown: function(arg){
+		console.log('selectTool.mousedown()');
+		console.log(arg);
+		console.log( SVG.select('.element').first().pointsArray() );
+	}
 };
 
 var moveTool = {
@@ -159,9 +164,7 @@ var hexTool = {
 	class: 'fa fa-code',
 	mousedown: function(){
 		console.log('hexTool.mousedown()');
-		
-		//console.log( workspace.svg.select('rect.rect') );
-		console.log( SVG.select('rect.rect').first().width() );
+		//console.log( SVG.select('.element').first().pointsArray() );
 	}
 }
 

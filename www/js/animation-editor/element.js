@@ -42,6 +42,20 @@ var element = {
 
 			rect.type = function() { return 'rect'; }
 
+			rect.pointsArray = function(){
+				console.log('rect.coords()');
+				var x = this.x();
+				var y = this.y();
+				var w = this.width();
+				var h = this.height();
+				return [
+					{x: (x) ,y: (y)},
+					{x: (x+w) ,y: (y)},
+					{x: (x+w) ,y: (y+h)},
+					{x: (x) ,y: (y+h)},
+				]
+			}
+
 		return this.addElementMethods(rect);
 	},
 
