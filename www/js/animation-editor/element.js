@@ -96,6 +96,17 @@ var element = {
 				move(geometry);
 
 				polyline.type = function() { return 'polyline'; }
+				
+				polyline.pointsArray = function(){
+					console.log('polyline.pointsArray()');
+					var svgPoints = polyline.attr('points').split(' ');
+					var points = [];
+					for (var i=0; i<svgPoints.length; i++) {
+						var coord = svgPoints[i].split(',');
+						points.push({x:coord[0], y:coord[1]});
+					}
+					return points;
+				}
 
 		return this.addElementMethods(polyline);
 	},
