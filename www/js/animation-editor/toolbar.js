@@ -8,12 +8,14 @@ var toolbar = $('<div></div>');
 toolbar.init = function(){
 	//console.log('toolbar.init()');
 
+	// приторочиваю инструменты
 	for (var name in toolSpecs) {
 		var spec = toolSpecs[name];
 			spec.name = name;
 		this.appendTool(spec);
 	}
 
+	// приторочиваю фото-кнопку
 	var photoButton = $("<button id='photo_button'><i  class='fa fa-camera-retro fa-4x'></i></button>");
 	var photoButtonCallback = function(){
 		console.log('photoButton callback');
@@ -26,16 +28,12 @@ toolbar.init = function(){
 		photoImage.height(newSize.height);
 		photoImage.attr('src', photocamera.photo);
 	}
-	photoButton.click(function(){
-		photocamera.takeAPhoto({
-			callback: photoButtonCallback
-		});
+	photoButton.on('click', function(){
+		photocamera.takeAPhoto({ callback: photoButtonCallback});
 	});
-	
 	this.append(photoButton);
 	
 	this.setDefaultTool();
-
 	editor.append(this);
 }
 

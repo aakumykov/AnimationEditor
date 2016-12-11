@@ -8,7 +8,7 @@ var selectToolSpec = {
 	mousedown: function(){
 		console.log('selectTool.mousedown()');
 		//console.log( SVG.select('.element').first().pointsArray() );
-		console.log( SVG.select('.element').first().hexArray() );
+		//console.log( SVG.select('.element').first().hexArray() );
 	}
 };
 
