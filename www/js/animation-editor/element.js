@@ -31,7 +31,7 @@ var element = {
 	
 		// возвращает массив hex-команд для arduino LaserShow
 		element.hexArray = function(){
-			console.log(this.type()+', element.hexArray()');
+			//console.log(this.type()+', element.hexArray()');
 			
 			// превращает десятичную координату в hex-команду с опциональным включением указателя (лазера)
 			function dec2hex(n, laserOn=false) {
@@ -41,7 +41,7 @@ var element = {
 			
 			var points = this.points();
 			
-				console.log(points);
+				//console.log(points);
 			
 			// установка указателя в начальную точку без включения
 			var hex_array = [ dec2hex(points[0]), dec2hex(points[1]) ];

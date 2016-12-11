@@ -172,9 +172,13 @@ var hexTool = {
 		
 		elements_array.each(function(i,element){
 			var virtElement = element.instance;
-			console.log( virtElement.hexArray() );
-			console.log('-----------------------');
+			cmd_array.push( virtElement.hexArray() );
 		});
+
+		console.log('cmd_array:');
+		for (var k in cmd_array){
+			console.log(cmd_array[k]);
+		}
 	},
 }
 
