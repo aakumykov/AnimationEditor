@@ -29,26 +29,32 @@ var element = {
 			workspace.mouseup(ev);
 		});
 	
+		// возвращает массив hex-команд для arduino LaserShow
 		element.hexArray = function(){
-			console.log('element.hexArray()');
-			//console.log(this);
-			console.log(this.type());
+			console.log(this.type()+', element.hexArray()');
 			
+			// превращает десятичную координату в hex-команду с опциональным включением указателя (лазера)
 			function dec2hex(n, laserOn=false) {
 				var modifier = (laserOn) ? 32768 : 0;
-				return  "0x" + (n+modifier).toString(16);
+				return  "0x" + (Math.round(n) + modifier).toString(16);
 			}
 			
 			var points = this.points();
-				
+			
 				console.log(points);
 			
+			// установка указателя в начальную точку без включения
 			var hex_array = [ dec2hex(points[0]), dec2hex(points[1]) ];
 			
+			// обход остальных точек с включением
 			for (var i=2; i<points.length; i+=2) {
 				hex_array.push( dec2hex(points[i],true) );
 				hex_array.push( dec2hex(points[i+1]) );
 			}
+
+			// возврат в первую точку с включением
+			hex_array.push( dec2hex(points[0],true) );
+			hex_array.push( dec2hex(points[1]) );
 			
 			return hex_array;
 		}

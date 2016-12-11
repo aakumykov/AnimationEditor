@@ -74,7 +74,7 @@ var circleTool = {
 	title: 'Круг',
 	class: 'fa fa-circle-o',
 	mouseup: function(){
-		console.log('circleTool.mouseup()');
+		//console.log('circleTool.mouseup()');
 		
 		var circle = element.circle(digest.geometry());
 
@@ -88,7 +88,7 @@ var polylineTool = {
 	context: 'workspace',
 	class: 'fa fa-pencil',
 	mouseup: function(){
-		console.log('polylineTool.mouseup()');
+		//console.log('polylineTool.mouseup()');
 		
 		var polyline = element.polyline(digest.geometry(), digest.mousePath());
 
@@ -164,13 +164,16 @@ var hexTool = {
 	class: 'fa fa-code',
 	mousedown: function(){
 		console.log('hexTool.mousedown()');
-		console.log(this);
 		
 		var self = this;
+
+		var elements_array = $('.element');
 		var cmd_array = [];
 		
-		$('.element').each(function(i,element){
-			//console.log( element.instance.pointsArray() );
+		elements_array.each(function(i,element){
+			var virtElement = element.instance;
+			console.log( virtElement.hexArray() );
+			console.log('-----------------------');
 		});
 	},
 }
